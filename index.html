@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4·15国家安全教育普法互动</title>
+
+    <style>
+
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif}
+
+        body{background:#f5f7fa;color:#333;max-width:750px;margin:0 auto}
+
+        .article{padding:15px 20px;line-height:1.8;font-size:16px}
+
+        .article h2{text-align:center;color:#21419a;margin:20px 0 10px}
+
+        .game-entry{
+
+            position:relative;width:100%;height:220px;
+
+            background:url(https://picsum.photos/id/1036/800/450) center/cover;
+
+            border-radius:12px;margin:25px 0;overflow:hidden
+
+        }
+
+        .game-entry::after{
+
+            content:"";position:absolute;left:0;top:0;width:100%;height:100%;
+
+            background:rgba(0,0,0,.4)
+
+        }
+
+        .entry-btn{
+
+            position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
+
+            background:#21419a;color:#fff;border:none;border-radius:30px;
+
+            padding:12px 30px;font-size:16px;cursor:pointer
+
+        }
+
+
+
+        .game-modal{
+
+            display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;
+
+            background:rgba(0,0,0,.7);padding:10px
+
+        }
+
+        .game-box{
+
+            background:#fff;border-radius:14px;max-width:700px;margin:20px auto;
+
+            height:85vh;position:relative;overflow:hidden
+
+        }
+
+        .close-btn{
+
+            position:absolute;right:12px;top:10px;background:#ff4444;color:#fff;
+
+            border:none;border-radius:50%;width:32px;height:32px;z-index:10;cursor:pointer
+
+        }
+
+        .audio-control{
+
+            position:absolute;left:12px;top:10px;z-index:10;
+
+            background:#21419a;color:#fff;border:none;border-radius:20px;
+
+            padding:5px 12px;font-size:12px;cursor:pointer
+
+        }
+
+
+
+        .scene{
+
+            width:100%;height:100%;position:relative;
+
+            background:url(https://picsum.photos/id/325/1000/1200) center/cover
+
+        }
+
+        .police-box{
+
+            padding:15px;text-align:center;color:#fff;
+
+            background:rgba(0,0,0,.5);min-height:80px
+
+        }
+
+        .police-box h3{font-size:17px;margin-bottom:5px}
+
+        .road-box{
+
+            position:absolute;bottom:120px;left:0;right:0;height:55%;
+
+            display:flex;align-items:flex-end;justify-content:center
+
+        }
+
+        .road{
+
+            display:flex;gap:30px;margin-bottom:40px
+
+        }
+
+        .path{
+
+            width:60px;height:180px;background:rgba(255,255,255,.7);
+
+            border-radius:10px 10px 0 0;cursor:pointer
+
+        }
+
+        .path:hover{background:#fff}
+
+
+
+        .people{
+
+            width:40px;height:60px;position:absolute;
+
+            background:url(https://picsum.photos/id/999/200/300) center/cover;
+
+            border-radius:8px;transition:all .8s ease;bottom:120px
+
+        }
+
+        .back-btn{
+
+            position:absolute;left:50%;bottom:20px;transform:translateX(-50%);
+
+            background:#21419a;color:#fff;border:none;border-radius:20px;
+
+            padding:8px 20px;display:none
+
+        }
+
+
+
+        .result-box{
+
+            display:none;position:absolute;top:0;left:0;right:0;bottom:0;
+
+            background:rgba(0,0,0,.8);color:#fff;align-items:center;justify-content:center;
+
+            flex-direction:column;padding:30px;text-align:center
+
+        }
+
+        .result-box h2{margin-bottom:20px}
+
+        .restart-btn{
+
+            margin-top:20px;background:#21419a;color:#fff;
+
+            border:none;border-radius:20px;padding:10px 25px
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<!-- 公众号文章区域 -->
+
+<div class="article">
+
+    <h2>4·15全民国家安全教育日普法宣传</h2>
+
+    <p>国家安全，人人有责。为增强全民国家安全意识，提升防范能力，本院特推出互动普法游戏，欢迎参与。</p>
+
+    <p>通过场景选择，学习国家安全相关法律知识，共同守护国家安全。</p>
+
+
+
+    <!-- 游戏入口 -->
+
+    <div class="game-entry">
+
+        <button class="entry-btn" onclick="openGame()">立即探索</button>
+
+    </div>
+
+
+
+    <p>维护国家安全，是每个公民的法定义务。让我们共同学习，提高警惕，防范风险。</p>
+
+    <p style="text-align:center;margin-top:20px;color:#666">某地方人民检察院 宣</p>
+
+</div>
+
+
+
+<!-- 游戏弹窗 -->
+
+<div class="game-modal" id="gameModal">
+
+    <div class="game-box">
+
+        <button class="close-btn" onclick="closeGame()">×</button>
+
+        <button class="audio-control" onclick="toggleAudio()" id="audioBtn">关闭音乐</button>
+
+
+
+        <div class="scene">
+
+            <div class="police-box" id="policeBox">
+
+                <h3>警察叔叔：</h3>
+
+                <p id="questionText">正在加载问题...</p>
+
+            </div>
+
+
+
+            <div class="road-box">
+
+                <div class="road" id="road"></div>
+
+                <div class="people" id="people"></div>
+
+            </div>
+
+
+
+            <button class="back-btn" id="backBtn" onclick="goBack()">返回上一步</button>
+
+        </div>
+
+
+
+        <div class="result-box" id="resultBox">
+
+            <h2 id="resultTitle"></h2>
+
+            <p id="resultContent"></p>
+
+            <button class="restart-btn" onclick="restartGame()">重新开始</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<audio id="bgm" loop>
+
+    <source src="https://www.fesliyanstudios.com/musicfiles/426.mp3" type="audio/mpeg">
+
+
+
+
+
+<script>
+
+    // 题目路线数据
+
+    const data = [
+
+        {
+
+            q:"下列不属于国家安全范畴的是？",
+
+            opts:["网络安全","家庭聚餐安全","生态安全"],
+
+            correct:1
+
+        },
+
+        {
+
+            q:"发现有人偷拍军事禁区，你应该？",
+
+            opts:["假装没看见","立即报警","拍照转发朋友圈"],
+
+            correct:1
+
+        },
+
+        {
+
+            q:"向境外提供国家秘密会构成？",
+
+            opts:["合法交流","危害国家安全罪","正常学术往来"],
+
+            correct:1
+
+        },
+
+        {
+
+            q:"维护国家安全，公民应当？",
+
+            opts:["遵守宪法法律","随意泄露信息","拒绝配合调查"],
+
+            correct:0
+
+        }
+
+    ];
+
+
+
+    let step = 0;
+
+    let pathPos = [0, -90, -180];
+
+    let history = [];
+
+    let audioOn = true;
+
+
+
+    // 游戏控制
+
+    function openGame(){
+
+        document.getElementById("gameModal").style.display="block";
+
+        playBgm();
+
+        render();
+
+    }
+
+    function closeGame(){
+
+        document.getElementById("gameModal").style.display="none";
+
+        document.getElementById("bgm").pause();
+
+    }
+
+    function playBgm(){
+
+        document.getElementById("bgm").play().catch(e=>{});
+
+    }
+
+    function toggleAudio(){
+
+        let a = document.getElementById("bgm");
+
+        let btn = document.getElementById("audioBtn");
+
+        if(audioOn){
+
+            a.pause();
+
+            btn.textContent="开启音乐";
+
+        }else{
+
+            a.play();
+
+            btn.textContent="关闭音乐";
+
+        }
+
+        audioOn=!audioOn;
+
+    }
+
+
+
+    // 渲染当前题目与道路
+
+    function render(){
+
+        let d = data[step];
+
+        document.getElementById("questionText").textContent = d.q;
+
+        let road = document.getElementById("road");
+
+        road.innerHTML = "";
+
+        d.opts.forEach((opt,i)=>{
+
+            let p = document.createElement("div");
+
+            p.className="path";
+
+            p.onclick=()=>choose(i);
+
+            road.appendChild(p);
+
+        });
+
+        document.getElementById("people").style.left="calc(50% - 20px)";
+
+        document.getElementById("backBtn").style.display = step>0 ? "block" : "none";
+
+    }
+
+
+
+    // 选择答案
+
+    function choose(idx){
+
+        if(step>=data.length) return;
+
+        history.push(idx);
+
+        movePeople(idx);
+
+        setTimeout(()=>{
+
+            step++;
+
+            if(step>=data.length){
+
+                showResult();
+
+            }else{
+
+                render();
+
+            }
+
+        },900);
+
+    }
+
+
+
+    // 人物移动
+
+    function movePeople(idx){
+
+        let p = document.getElementById("people");
+
+        p.style.left = `calc(50% + ${pathPos[idx]}px)`;
+
+        document.getElementById("questionText").textContent="正在前行...";
+
+    }
+
+
+
+    // 返回上一步
+
+    function goBack(){
+
+        if(step<=0) return;
+
+        history.pop();
+
+        step--;
+
+        render();
+
+    }
+
+
+
+    // 结局判断
+
+    function showResult(){
+
+        document.querySelector(".road-box").style.display="none";
+
+        document.getElementById("backBtn").style.display="none";
+
+        let resBox = document.getElementById("resultBox");
+
+        let title = document.getElementById("resultTitle");
+
+        let content = document.getElementById("resultContent");
+
+        resBox.style.display="flex";
+
+
+
+        let ok = history.every((s,i)=>s===data[i].correct);
+
+        if(ok){
+
+            title.textContent="恭喜你！你是合格守法好公民！";
+
+            content.textContent="你的选择全部正确，国家安全知识掌握扎实，感谢你为维护国家安全贡献力量！";
+
+        }else{
+
+            title.textContent="选择有误，请注意法律风险";
+
+            content.textContent="部分选择不符合国家安全法律要求，错误行为可能危害国家安全，需承担法律责任，请认真学习相关法律知识。";
+
+        }
+
+    }
+
+
+
+    function restartGame(){
+
+        step=0;
+
+        history=[];
+
+        document.querySelector(".road-box").style.display="flex";
+
+        document.getElementById("resultBox").style.display="none";
+
+        render();
+
+    }
+
+</script>
+
+</body>
+
+</html>
