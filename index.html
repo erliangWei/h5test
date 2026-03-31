@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;守护少年的你 - 全国中小学生安全教育日特辑&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", "Noto Sans", sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f5f7fc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1e2a3e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.65;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 主容器 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 封面区 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0055a4 0%, #0077be 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 24px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: -30%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: -20%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: -20%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: -10%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.35;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.3px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-sub {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 内容区 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px 20px 48px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 章节卡片 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #eef2f8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px 20px 8px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #f0f4fa;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #eef3fc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-sub {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #6c7a8e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 20px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-body p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2c3e4e;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.highlight-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f0f7ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 16px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.highlight-blue {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #eef3fc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 14px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tips-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tips-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.45;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.tips-list li::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "✅";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.divider {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #eef2f8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 检察官寄语 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.prosecutor-note {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f8fafd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 28px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.prosecutor-note h4 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 结尾区 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 28px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 32px 0 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #eef2f8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.three-things {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 24px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.thing-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #eef2f8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.thing-num {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 44px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.thing-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-share {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0055a4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 10px rgba(0, 85, 164, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-share:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(0.97);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #004080;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-note {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #8a99aa;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px 20px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #eef2f8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 动画 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(20px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card, .hero, .prosecutor-note, .footer-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.5s ease forwards;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation-delay: 0.1s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:nth-child(2) { animation-delay: 0.15s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:nth-child(3) { animation-delay: 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:nth-child(4) { animation-delay: 0.25s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:nth-child(5) { animation-delay: 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:nth-child(6) { animation-delay: 0.35s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="page-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 封面 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-icon"&gt;🛡️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-badge"&gt;全国中小学生安全教育日 · 特辑&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;@所有家长，&lt;br&gt;检察官想对您和孩子说几句心里话&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-sub"&gt;守护少年的你 · 让成长与安全同行&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 开场白 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="prosecutor-note" style="margin-top: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;📖 @所有家长：&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 15px;"&gt;您好！我们是人民检察院的检察官。今天提笔写这封信，是因为我们有一个共同的身份——&lt;strong&gt;都是孩子的守护者&lt;/strong&gt;。您守护的是自己的孩子，我们守护的是所有孩子的平安与未来。在第XX个全国中小学生安全教育日来临之际，有些心里话，想和您，也想和您的孩子，好好说一说。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 01 校园欺凌 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-icon"&gt;🤝&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-title"&gt;校园欺凌&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-sub"&gt;被欺负，不是你的错&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;在我们办理的未成年人案件中，有太多沉默的孩子。校园欺凌，绝不是“孩子间的打闹”——肢体欺凌、言语欺凌、关系欺凌、网络欺凌，每一种都足以伤害一颗幼小的心灵。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;📢 检察官想对孩子说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>• 被欺负不是你的错，不要自责&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>• 勇敢说出来：老师、家长，或拨打12309检察服务热线&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>• 不做冷漠的旁观者，你的勇敢可能改变一切</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-blue"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;👨‍👩‍👧 检察官想对家长说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>留意孩子突然不想上学、情绪低落、物品丢失等信号。每天和孩子聊聊学校的事，告诉孩子：“爸爸妈妈永远是你最坚实的后盾。”</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 02 防性侵 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-icon"&gt;🔒&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-title"&gt;防性侵&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-sub"&gt;背心短裤盖住的地方，不许别人碰&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;性侵害犯罪中，70%以上是熟人作案。“这是我们之间的小秘密”“说出来你爸妈就不爱你了”——这些话术是惯用伎俩。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;🧒 检察官想对孩子说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>✅ 隐私部位不许碰：任何人都不许看、不许摸、不许拍照&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>✅ 奇怪的感觉要说不，大声喊“不要碰我”并跑开&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>✅ 不保守坏人的秘密，一定要告诉爸爸妈妈&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>✅ 三个“no”：不跟陌生人走、不吃陌生人的东西、不上陌生人的车</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-blue"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;👪 检察官想对家长说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>尽早给孩子做性教育，告诉孩子“无论发生什么，爸爸妈妈都不会怪你，一定会保护你”。如果孩子倾诉，请相信TA，保持冷静并第一时间报警。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 03 交通安全 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-icon"&gt;🚦&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-title"&gt;交通安全&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-sub"&gt;过马路，不只是“红灯停绿灯行”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;每年有超过1.8万名14岁以下儿童死于道路交通事故，很多悲剧就发生在家门口的马路上。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="tips-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;步行：&lt;/strong&gt;一停二看三通过，不做低头族，小心右转车辆&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;乘车：&lt;/strong&gt;12岁以下坐后排，使用安全座椅，荷式开门法更安全&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;strong&gt;骑行：&lt;/strong&gt;未满12岁不骑自行车上路，未满16岁不骑电动车，戴好头盔&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-blue"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;👨‍👩 检察官想对家长说：&lt;/strong&gt; 您的言传身教，是孩子最好的交通安全课。请遵守交通规则，因为孩子都在看着您。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 04 网络安全 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-icon"&gt;💻&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-title"&gt;网络安全&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-sub"&gt;你以为的“网友”，可能是“陷阱”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="tips-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;不轻信网友：不见网友，不透露姓名、学校、住址、照片&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;不随意充值：游戏、打赏必须经家长同意&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;不点击不明链接：免费皮肤、中奖信息，99%是诈骗&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;遇坏消息先求证：网上说“你爸妈出事”，先打电话确认&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-blue"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;📱 检察官想对家长说：&lt;/strong&gt; 开启青少年模式，约定上网时间，并告诉孩子：“网络上的任何问题都可以告诉爸妈，我们不会没收手机，只会帮你解决。”</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 05 心理安全 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-icon"&gt;❤️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-title"&gt;心理安全&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-sub"&gt;比成绩更重要的，是孩子“心里有光”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;学业压力、同伴关系、家庭矛盾……孩子的世界并不总是无忧无虑。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;🌟 检察官想对孩子说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>如果你觉得不开心、压力很大，请记住——&lt;strong&gt;说出来，是最好的解药&lt;/strong&gt;。可以找老师、父母、警察，或拨打 &lt;strong&gt;12355&lt;/strong&gt; 青少年心理援助热线，会有人认真听你说话。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="highlight-blue"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong&gt;🏠 检察官想对家长说：&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>关注情绪变化：持续低落、易怒、失眠可能是预警信号。让家成为“安全港”，少指责多倾听，告诉孩子：无论遇到什么困难，一家人一起面对。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 结尾寄语 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 style="color:#0055a4; margin-bottom: 12px;"&gt;写在最后&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-bottom: 16px;"&gt;&lt;strong&gt;@所有家长：&lt;/strong&gt;&lt;br&gt;保护孩子，您不是一个人。作为检察官，我们打击犯罪、普法宣传、走进校园，和您一样，希望每一个孩子都能在阳光下平安长大。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-style: italic; color:#3b5c7a;"&gt;愿每一个孩子，都能被世界温柔以待。&lt;br&gt;愿每一次成长，都有安全一路相伴。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="margin: 20px 0 12px;"&gt;—— 人民检察院，守护少年的你&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- 互动三件事 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-card" style="background: #ffffff;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 style="font-size: 18px;"&gt;🏡 今天回家，请和孩子做这三件事&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="three-things"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="thing-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-num"&gt;1️⃣&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-text"&gt;&lt;strong&gt;一个拥抱&lt;/strong&gt; — 告诉孩子“我爱你，无论如何”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="thing-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-num"&gt;2️⃣&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-text"&gt;&lt;strong&gt;一次聊天&lt;/strong&gt; — “今天有什么想和我分享的吗？”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="thing-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-num"&gt;3️⃣&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="thing-text"&gt;&lt;strong&gt;一个约定&lt;/strong&gt; — “有任何事都可以告诉爸妈，我们永远站你这边”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn-share" id="shareBtn"&gt;📲 转发给更多家长 · 守护更多孩子&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 12px; color: #8a99aa; margin-top: 20px;"&gt;多一个家庭看到，少一分安全风险&lt;br&gt;欢迎在评论区留言分享您的安全小故事&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🌱 全国中小学生安全教育日 · 检察公益普法&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>守护少年的你，我们一直在</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 简单的分享提示（移动端可唤起分享菜单，Web端提示复制链接）</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('shareBtn').addEventListener('click', function() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (navigator.share) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>navigator.share({</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: '守护少年的你 - 检察官给家长和孩子的一封信',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text: '全国中小学生安全教育日特辑，守护孩子平安成长。',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>url: window.location.href,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).catch(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('感谢您的关注，请将这篇文章转发给更多家长❤️');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 复制当前链接提示</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dummy = document.createElement('textarea');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dummy.value = window.location.href;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.appendChild(dummy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dummy.select();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.execCommand('copy');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.removeChild(dummy);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('链接已复制，可分享到微信群或朋友圈，让更多家长看到！');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
