@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 18.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;4·15国家安全教育普法互动&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>*{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body{background:#f5f7fa;color:#333;max-width:750px;margin:0 auto}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.article{padding:15px 20px;line-height:1.8;font-size:16px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.article h2{text-align:center;color:#21419a;margin:20px 0 10px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.game-entry{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:relative;width:100%;height:220px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:url(https://picsum.photos/id/1036/800/450) center/cover;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius:12px;margin:25px 0;overflow:hidden</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.game-entry::after{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content:"";position:absolute;left:0;top:0;width:100%;height:100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:rgba(0,0,0,.4)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.entry-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:#21419a;color:#fff;border:none;border-radius:30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding:12px 30px;font-size:16px;cursor:pointer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.game-modal{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:rgba(0,0,0,.7);padding:10px</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.game-box{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:#fff;border-radius:14px;max-width:700px;margin:20px auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height:85vh;position:relative;overflow:hidden</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.close-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:absolute;right:12px;top:10px;background:#ff4444;color:#fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border:none;border-radius:50%;width:32px;height:32px;z-index:10;cursor:pointer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.audio-control{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:absolute;left:12px;top:10px;z-index:10;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:#21419a;color:#fff;border:none;border-radius:20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding:5px 12px;font-size:12px;cursor:pointer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.scene{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width:100%;height:100%;position:relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:url(https://picsum.photos/id/325/1000/1200) center/cover</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.police-box{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding:15px;text-align:center;color:#fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:rgba(0,0,0,.5);min-height:80px</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.police-box h3{font-size:17px;margin-bottom:5px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.road-box{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:absolute;bottom:120px;left:0;right:0;height:55%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display:flex;align-items:flex-end;justify-content:center</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.road{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display:flex;gap:30px;margin-bottom:40px</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.path{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width:60px;height:180px;background:rgba(255,255,255,.7);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius:10px 10px 0 0;cursor:pointer</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.path:hover{background:#fff}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.people{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width:40px;height:60px;position:absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:url(https://picsum.photos/id/999/200/300) center/cover;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius:8px;transition:all .8s ease;bottom:120px</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.back-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position:absolute;left:50%;bottom:20px;transform:translateX(-50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:#21419a;color:#fff;border:none;border-radius:20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding:8px 20px;display:none</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-box{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display:none;position:absolute;top:0;left:0;right:0;bottom:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background:rgba(0,0,0,.8);color:#fff;align-items:center;justify-content:center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-direction:column;padding:30px;text-align:center</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-box h2{margin-bottom:20px}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.restart-btn{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top:20px;background:#21419a;color:#fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border:none;border-radius:20px;padding:10px 25px</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- 公众号文章区域 --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="article"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;4·15全民国家安全教育日普法宣传&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;国家安全，人人有责。为增强全民国家安全意识，提升防范能力，本院特推出互动普法游戏，欢迎参与。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;通过场景选择，学习国家安全相关法律知识，共同守护国家安全。&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 游戏入口 --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="game-entry"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="entry-btn" onclick="openGame()"&gt;立即探索&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;维护国家安全，是每个公民的法定义务。让我们共同学习，提高警惕，防范风险。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p style="text-align:center;margin-top:20px;color:#666"&gt;某地方人民检察院 宣&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- 游戏弹窗 --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="game-modal" id="gameModal"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="game-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="close-btn" onclick="closeGame()"&gt;×&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button class="audio-control" onclick="toggleAudio()" id="audioBtn"&gt;关闭音乐&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="scene"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="police-box" id="policeBox"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;警察叔叔：&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p id="questionText"&gt;正在加载问题...&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="road-box"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="road" id="road"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="people" id="people"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="back-btn" id="backBtn" onclick="goBack()"&gt;返回上一步&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="result-box" id="resultBox"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="resultTitle"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p id="resultContent"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="restart-btn" onclick="restartGame()"&gt;重新开始&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;audio id="bgm" loop&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;source src="https://www.fesliyanstudios.com/musicfiles/426.mp3" type="audio/mpeg"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 题目路线数据</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const data = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>q:"下列不属于国家安全范畴的是？",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opts:["网络安全","家庭聚餐安全","生态安全"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>correct:1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>q:"发现有人偷拍军事禁区，你应该？",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opts:["假装没看见","立即报警","拍照转发朋友圈"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>correct:1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>q:"向境外提供国家秘密会构成？",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opts:["合法交流","危害国家安全罪","正常学术往来"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>correct:1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>q:"维护国家安全，公民应当？",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opts:["遵守宪法法律","随意泄露信息","拒绝配合调查"],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>correct:0</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let step = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let pathPos = [0, -90, -180];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let history = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let audioOn = true;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 游戏控制</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function openGame(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("gameModal").style.display="block";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>playBgm();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function closeGame(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("gameModal").style.display="none";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("bgm").pause();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function playBgm(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("bgm").play().catch(e=&gt;{});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function toggleAudio(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let a = document.getElementById("bgm");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let btn = document.getElementById("audioBtn");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(audioOn){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>a.pause();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btn.textContent="开启音乐";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>a.play();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>btn.textContent="关闭音乐";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>audioOn=!audioOn;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 渲染当前题目与道路</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function render(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let d = data[step];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("questionText").textContent = d.q;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let road = document.getElementById("road");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>road.innerHTML = "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>d.opts.forEach((opt,i)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let p = document.createElement("div");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>p.className="path";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>p.onclick=()=&gt;choose(i);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>road.appendChild(p);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("people").style.left="calc(50% - 20px)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("backBtn").style.display = step&gt;0 ? "block" : "none";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 选择答案</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function choose(idx){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(step&gt;=data.length) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>history.push(idx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>movePeople(idx);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>setTimeout(()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>step++;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if(step&gt;=data.length){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>showResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},900);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 人物移动</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function movePeople(idx){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let p = document.getElementById("people");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>p.style.left = `calc(50% + ${pathPos[idx]}px)`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("questionText").textContent="正在前行...";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 返回上一步</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function goBack(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(step&lt;=0) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>history.pop();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>step--;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// 结局判断</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showResult(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelector(".road-box").style.display="none";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("backBtn").style.display="none";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let resBox = document.getElementById("resultBox");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let title = document.getElementById("resultTitle");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let content = document.getElementById("resultContent");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>resBox.style.display="flex";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let ok = history.every((s,i)=&gt;s===data[i].correct);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if(ok){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>title.textContent="恭喜你！你是合格守法好公民！";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content.textContent="你的选择全部正确，国家安全知识掌握扎实，感谢你为维护国家安全贡献力量！";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}else{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>title.textContent="选择有误，请注意法律风险";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content.textContent="部分选择不符合国家安全法律要求，错误行为可能危害国家安全，需承担法律责任，请认真学习相关法律知识。";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function restartGame(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>step=0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>history=[];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.querySelector(".road-box").style.display="flex";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById("resultBox").style.display="none";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>render();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
