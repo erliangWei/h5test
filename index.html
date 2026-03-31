@@ -1,537 +1,1195 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>4·15国家安全教育普法互动</title>
-
-    <style>
-
-        *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft YaHei",sans-serif}
-
-        body{background:#f5f7fa;color:#333;max-width:750px;margin:0 auto}
-
-        .article{padding:15px 20px;line-height:1.8;font-size:16px}
-
-        .article h2{text-align:center;color:#21419a;margin:20px 0 10px}
-
-        .game-entry{
-
-            position:relative;width:100%;height:220px;
-
-            background:url(https://picsum.photos/id/1036/800/450) center/cover;
-
-            border-radius:12px;margin:25px 0;overflow:hidden
-
-        }
-
-        .game-entry::after{
-
-            content:"";position:absolute;left:0;top:0;width:100%;height:100%;
-
-            background:rgba(0,0,0,.4)
-
-        }
-
-        .entry-btn{
-
-            position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
-
-            background:#21419a;color:#fff;border:none;border-radius:30px;
-
-            padding:12px 30px;font-size:16px;cursor:pointer
-
-        }
-
-
-
-        .game-modal{
-
-            display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;
-
-            background:rgba(0,0,0,.7);padding:10px
-
-        }
-
-        .game-box{
-
-            background:#fff;border-radius:14px;max-width:700px;margin:20px auto;
-
-            height:85vh;position:relative;overflow:hidden
-
-        }
-
-        .close-btn{
-
-            position:absolute;right:12px;top:10px;background:#ff4444;color:#fff;
-
-            border:none;border-radius:50%;width:32px;height:32px;z-index:10;cursor:pointer
-
-        }
-
-        .audio-control{
-
-            position:absolute;left:12px;top:10px;z-index:10;
-
-            background:#21419a;color:#fff;border:none;border-radius:20px;
-
-            padding:5px 12px;font-size:12px;cursor:pointer
-
-        }
-
-
-
-        .scene{
-
-            width:100%;height:100%;position:relative;
-
-            background:url(https://picsum.photos/id/325/1000/1200) center/cover
-
-        }
-
-        .police-box{
-
-            padding:15px;text-align:center;color:#fff;
-
-            background:rgba(0,0,0,.5);min-height:80px
-
-        }
-
-        .police-box h3{font-size:17px;margin-bottom:5px}
-
-        .road-box{
-
-            position:absolute;bottom:120px;left:0;right:0;height:55%;
-
-            display:flex;align-items:flex-end;justify-content:center
-
-        }
-
-        .road{
-
-            display:flex;gap:30px;margin-bottom:40px
-
-        }
-
-        .path{
-
-            width:60px;height:180px;background:rgba(255,255,255,.7);
-
-            border-radius:10px 10px 0 0;cursor:pointer
-
-        }
-
-        .path:hover{background:#fff}
-
-
-
-        .people{
-
-            width:40px;height:60px;position:absolute;
-
-            background:url(https://picsum.photos/id/999/200/300) center/cover;
-
-            border-radius:8px;transition:all .8s ease;bottom:120px
-
-        }
-
-        .back-btn{
-
-            position:absolute;left:50%;bottom:20px;transform:translateX(-50%);
-
-            background:#21419a;color:#fff;border:none;border-radius:20px;
-
-            padding:8px 20px;display:none
-
-        }
-
-
-
-        .result-box{
-
-            display:none;position:absolute;top:0;left:0;right:0;bottom:0;
-
-            background:rgba(0,0,0,.8);color:#fff;align-items:center;justify-content:center;
-
-            flex-direction:column;padding:30px;text-align:center
-
-        }
-
-        .result-box h2{margin-bottom:20px}
-
-        .restart-btn{
-
-            margin-top:20px;background:#21419a;color:#fff;
-
-            border:none;border-radius:20px;padding:10px 25px
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>4·15全民国家安全教育日</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Ma+Shan+Zheng&display=swap');
+
+:root{
+  --ink:#1a1220;--red:#c0392b;--darkred:#8b1a12;--gold:#e8b84b;--gold2:#f5d78e;
+  --navy:#0d1b3e;--sky1:#1a3a6b;--sky2:#2e6da4;--sky3:#87c4e8;
+  --grass1:#1a4a1a;--grass2:#2d7a2d;--grass3:#4db84d;
+  --road:#c8a96a;--roadedge:#a07840;--pathlight:#f0d8a0;
+  --stone:#8a8a9a;--fog:rgba(200,220,255,0.18);
+  --shadow:rgba(0,0,0,0.45);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{width:100%;min-height:100vh;overflow-x:hidden;background:#0d0d1a;
+  font-family:'Noto Serif SC','PingFang SC','Microsoft YaHei',serif;}
+
+/* ══════════ ARTICLE WRAPPER ══════════ */
+.article{max-width:480px;margin:0 auto;background:#fff;min-height:100vh;position:relative;}
+
+/* ── Top bar ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;
+  padding:11px 16px;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid #e8e0d5;position:sticky;top:0;z-index:20;}
+.topbar-back{font-size:22px;color:#444;line-height:1;}
+.topbar-title{font-size:13px;color:#222;font-weight:700;letter-spacing:.5px;}
+.topbar-more{font-size:20px;color:#444;letter-spacing:3px;line-height:1;}
+
+/* ── Hero banner ── */
+.hero{width:100%;height:260px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0a0e1a 0%,#0d1b3e 40%,#1a1a40 100%);}
+.hero-canvas{position:absolute;inset:0;}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;z-index:5;}
+.hero-date-tag{background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#1a0a00;font-size:11px;font-weight:900;padding:4px 18px;border-radius:20px;
+  letter-spacing:3px;box-shadow:0 2px 12px rgba(232,184,75,0.5);}
+.hero-title{font-family:'Ma Shan Zheng',serif;font-size:42px;color:#fff;
+  letter-spacing:8px;text-shadow:0 0 40px rgba(232,184,75,0.6),0 2px 16px rgba(0,0,0,0.8);
+  line-height:1;}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.8);letter-spacing:4px;
+  text-shadow:0 1px 8px rgba(0,0,0,0.5);}
+.hero-shield{font-size:48px;opacity:.12;position:absolute;right:20px;bottom:20px;}
+
+/* ── Article meta ── */
+.meta{display:flex;align-items:center;gap:10px;padding:14px 16px;
+  border-bottom:1px solid #f0ebe2;}
+.meta-ava{width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--red),var(--darkred));
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:#fff;font-weight:900;
+  box-shadow:0 2px 10px rgba(192,57,43,0.4);}
+.meta-info{flex:1;}
+.meta-name{font-size:13px;font-weight:700;color:#1a1a1a;}
+.meta-time{font-size:11px;color:#999;margin-top:2px;}
+.meta-follow{font-size:12px;color:var(--red);border:1px solid var(--red);
+  border-radius:12px;padding:4px 12px;white-space:nowrap;}
+
+/* ── Body text ── */
+.body{padding:20px 18px 0;}
+.body p{font-size:15px;color:#333;line-height:2;margin-bottom:14px;text-align:justify;}
+.callout{margin:18px 0;padding:16px 18px;
+  background:linear-gradient(135deg,#fff8f0,#fff0e8);
+  border-left:4px solid var(--gold);border-radius:0 12px 12px 0;
+  box-shadow:0 2px 12px rgba(232,184,75,0.15);}
+.callout p{margin:0;color:#5a3000;font-size:14px;font-weight:700;}
+.section-divider{display:flex;align-items:center;gap:10px;margin:20px 0;color:#ccc;font-size:12px;}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#e0d5c5,transparent);}
+
+/* ══════════ GAME ENTRY BOX ══════════ */
+.game-entry{margin:0 16px 20px;border-radius:20px;overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,0.2),0 2px 8px rgba(0,0,0,0.1);
+  position:relative;cursor:pointer;}
+.entry-scene{width:100%;height:210px;position:relative;overflow:hidden;}
+
+/* Entry scene - isometric style */
+.entry-iso{width:100%;height:100%;background:linear-gradient(180deg,
+  #0a1628 0%,#1a3a6b 35%,#2a5a2a 35%,#1a4a1a 100%);position:relative;}
+.entry-road-main{position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:0;height:0;border-left:50px solid transparent;border-right:50px solid transparent;
+  border-bottom:120px solid var(--road);filter:drop-shadow(0 -2px 8px rgba(0,0,0,0.3));}
+.entry-road-left{position:absolute;bottom:55%;left:0;width:45%;height:22px;
+  background:linear-gradient(90deg,var(--road),rgba(200,169,106,0.6));
+  transform:rotate(-12deg);transform-origin:right center;border-radius:4px;}
+.entry-road-right{position:absolute;bottom:55%;right:0;width:45%;height:22px;
+  background:linear-gradient(90deg,rgba(200,169,106,0.6),var(--road));
+  transform:rotate(12deg);transform-origin:left center;border-radius:4px;}
+.entry-stars-wrap{position:absolute;inset:0 0 35% 0;overflow:hidden;}
+.entry-person{position:absolute;bottom:54%;left:50%;transform:translateX(-50%);
+  font-size:0;width:26px;height:44px;}
+.entry-overlay{position:absolute;inset:0;background:linear-gradient(180deg,
+  rgba(10,22,40,0.3) 0%,rgba(10,22,40,0.55) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.entry-label{color:#fff;font-size:17px;font-weight:900;letter-spacing:2px;
+  text-shadow:0 2px 12px rgba(0,0,0,0.6);}
+.entry-sub{color:rgba(255,255,255,0.8);font-size:12px;letter-spacing:1px;}
+.btn-start{background:linear-gradient(135deg,var(--gold),#d4900a);
+  color:#1a0800;border:none;border-radius:30px;padding:13px 36px;
+  font-size:16px;font-weight:900;cursor:pointer;font-family:inherit;
+  box-shadow:0 4px 20px rgba(232,184,75,0.5),0 2px 8px rgba(0,0,0,0.2);
+  letter-spacing:2px;transition:all .2s;position:relative;overflow:hidden;}
+.btn-start::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.25),transparent);border-radius:30px;}
+.btn-start:active{transform:scale(.96);}
+
+/* ── Footer ── */
+.footer-body{padding:0 18px 32px;}
+.footer-body p{font-size:15px;color:#333;line-height:2;margin-bottom:14px;text-align:justify;}
+.law-card{background:linear-gradient(135deg,#f8f5f0,#f2ece2);
+  border:1px solid #e0d5c5;border-radius:14px;padding:16px 18px;margin:16px 0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);}
+.law-card h4{font-size:13px;color:var(--red);margin-bottom:8px;font-weight:900;}
+.law-card p{font-size:13px;color:#555;line-height:1.8;margin:0;}
+.org{text-align:center;margin-top:24px;padding:16px 0;
+  border-top:1px dashed #ddd;}
+.org p{font-size:11px;color:#aaa;margin-bottom:3px;}
+
+/* ══════════ GAME MODAL ══════════ */
+.gmodal{position:fixed;inset:0;z-index:1000;display:none;
+  align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);}
+.gmodal.open{display:flex;}
+.gbox{width:min(98vw,480px);height:min(94vh,760px);border-radius:22px;
+  overflow:hidden;position:relative;display:flex;flex-direction:column;
+  box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.08);}
+
+/* ── HUD buttons ── */
+.hud-btn{position:absolute;z-index:60;width:36px;height:36px;
+  background:rgba(10,20,40,0.65);border:1px solid rgba(255,255,255,0.2);
+  border-radius:50%;color:#fff;font-size:17px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(8px);transition:background .2s;}
+.hud-btn:hover{background:rgba(255,255,255,0.2);}
+#btnClose{top:14px;right:14px;}
+#btnMusic{top:14px;left:14px;}
+#btnMusic.spin{animation:spin 4s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ── Police HUD bar (top) ── */
+.police-bar{position:absolute;top:0;left:0;right:0;height:160px;z-index:30;
+  background:linear-gradient(180deg,rgba(8,15,35,0.92) 0%,rgba(8,15,35,0.0) 100%);
+  display:flex;align-items:flex-start;padding:14px 12px 0;gap:10px;pointer-events:none;}
+.police-char{flex-shrink:0;width:70px;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.police-svg-wrap{width:56px;height:72px;}
+.police-tag{font-size:10px;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.4);
+  padding:2px 7px;border-radius:8px;white-space:nowrap;}
+.bubble{flex:1;background:rgba(255,255,255,0.97);border-radius:14px;
+  padding:10px 13px;box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  position:relative;margin-top:6px;pointer-events:none;
+  transition:opacity .35s ease;}
+.bubble::before{content:'';position:absolute;left:-9px;top:14px;
+  border:9px solid transparent;border-right-color:rgba(255,255,255,0.97);
+  border-left:0;margin-top:-9px;}
+.bubble-round{display:inline-block;background:linear-gradient(135deg,var(--red),var(--darkred));
+  color:#fff;font-size:10px;font-weight:900;padding:2px 9px;
+  border-radius:10px;margin-bottom:6px;letter-spacing:1px;}
+.bubble-q{font-size:12px;color:#1a1a2e;font-weight:700;line-height:1.7;}
+.bubble-hint{font-size:10px;color:#888;margin-top:5px;}
+
+/* ── 3D PANORAMIC MAP VIEWPORT ── */
+.map-viewport{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none;}
+.map-viewport:active{cursor:grabbing;}
+.map-world{position:absolute;will-change:transform;}
+
+/* ── Progress HUD ── */
+.prog-hud{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);
+  z-index:40;display:flex;align-items:center;gap:6px;
+  background:rgba(8,15,35,0.7);border-radius:20px;padding:6px 14px;
+  backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);}
+.prog-dot{width:9px;height:9px;border-radius:50%;
+  background:rgba(255,255,255,0.25);transition:all .3s;}
+.prog-dot.done{background:var(--gold);box-shadow:0 0 6px var(--gold);}
+.prog-dot.cur{background:#fff;box-shadow:0 0 8px #fff;}
+.prog-label{font-size:11px;color:rgba(255,255,255,0.7);margin-left:4px;}
+
+/* ── Back button ── */
+.back-hud{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  z-index:40;background:rgba(10,20,40,0.7);border:1px solid rgba(255,255,255,0.25);
+  color:#fff;border-radius:22px;padding:8px 22px;font-size:13px;
+  cursor:pointer;font-family:inherit;display:none;
+  backdrop-filter:blur(8px);transition:background .2s;}
+.back-hud:hover{background:rgba(255,255,255,0.15);}
+
+/* ══════════ RESULT SCREEN ══════════ */
+.result{position:absolute;inset:0;z-index:100;display:none;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:28px 24px;text-align:center;}
+.result.show{display:flex;}
+.result.win{background:radial-gradient(ellipse at 50% 30%,#1a3a6b 0%,#080f23 70%);}
+.result.lose{background:radial-gradient(ellipse at 50% 30%,#4a0e0e 0%,#0d0505 70%);}
+.r-confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.r-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+.r-police{width:90px;height:120px;margin-bottom:10px;}
+.r-icon{font-size:56px;margin-bottom:8px;animation:pop .5s cubic-bezier(.17,.89,.32,1.28);}
+@keyframes pop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+.r-title{font-size:28px;font-weight:900;letter-spacing:3px;margin-bottom:12px;}
+.r-title.win{color:var(--gold);text-shadow:0 0 20px rgba(232,184,75,0.6);}
+.r-title.lose{color:#e74c3c;text-shadow:0 0 20px rgba(231,76,60,0.4);}
+.r-desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,0.88);
+  background:rgba(255,255,255,0.07);border-radius:14px;padding:14px 16px;
+  margin-bottom:14px;border:1px solid rgba(255,255,255,0.1);}
+.r-law{font-size:11px;color:rgba(255,255,255,0.45);font-style:italic;
+  margin-bottom:22px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);}
+.r-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+.btn-retry{background:linear-gradient(135deg,var(--gold),#c47d00);
+  color:#1a0800;border:none;border-radius:24px;padding:12px 32px;
+  font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;}
+.btn-qclose{background:rgba(255,255,255,0.1);color:#fff;
+  border:1px solid rgba(255,255,255,0.25);border-radius:24px;
+  padding:12px 24px;font-size:14px;cursor:pointer;font-family:inherit;}
+
+/* ── Transition fade ── */
+.trans{position:absolute;inset:0;z-index:80;background:rgba(0,0,0,0);
+  pointer-events:none;transition:background .45s;}
+.trans.dark{background:rgba(0,0,0,0.8);}
+</style>
 </head>
-
 <body>
-
-
-
-<!-- 公众号文章区域 -->
 
 <div class="article">
 
-    <h2>4·15全民国家安全教育日普法宣传</h2>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-back">‹</div>
+    <div class="topbar-title">某地方检察院</div>
+    <div class="topbar-more">···</div>
+  </div>
 
-    <p>国家安全，人人有责。为增强全民国家安全意识，提升防范能力，本院特推出互动普法游戏，欢迎参与。</p>
-
-    <p>通过场景选择，学习国家安全相关法律知识，共同守护国家安全。</p>
-
-
-
-    <!-- 游戏入口 -->
-
-    <div class="game-entry">
-
-        <button class="entry-btn" onclick="openGame()">立即探索</button>
-
+  <!-- Hero -->
+  <div class="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-date-tag">4 · 15 全民国家安全教育日</div>
+      <div class="hero-title">国家安全</div>
+      <div class="hero-sub">人人有责 · 共同守护</div>
     </div>
+    <div class="hero-shield">🛡️</div>
+  </div>
 
+  <!-- Meta -->
+  <div class="meta">
+    <div class="meta-ava">检</div>
+    <div class="meta-info">
+      <div class="meta-name">某地方检察院</div>
+      <div class="meta-time">2025年04月15日 · 普法专栏</div>
+    </div>
+    <div class="meta-follow">+ 关注</div>
+  </div>
 
+  <!-- Body -->
+  <div class="body">
+    <p>国家安全，是国家存在与发展的根基，是人民幸福生活的保障。<strong>每年4月15日</strong>是全民国家安全教育日，这一天，我们共同学习、共同守护。</p>
+    <div class="callout">
+      <p>🔐 国家安全，人人有责。维护国家安全，是每位公民的法定义务，也是我们共同的责任担当。</p>
+    </div>
+    <p>在日常生活中，很多看似普通的行为，可能都与国家安全息息相关。你是否知道，如何在关键时刻作出正确的选择？</p>
+    <div class="section-divider">互动闯关</div>
+    <p>跟随警察叔叔的引导，走进下面这条蜿蜒的普法小路，通过情景选择，检验您的国家安全知识——</p>
+  </div>
 
-    <p>维护国家安全，是每个公民的法定义务。让我们共同学习，提高警惕，防范风险。</p>
+  <!-- Game entry -->
+  <div class="game-entry" id="gameEntry">
+    <div class="entry-scene">
+      <div class="entry-iso">
+        <div class="entry-stars-wrap" id="entryStars"></div>
+        <!-- Isometric road fork -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 440 210" preserveAspectRatio="none">
+          <!-- Sky gradient -->
+          <defs>
+            <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#07111f"/>
+              <stop offset="100%" stop-color="#1a3a6b"/>
+            </linearGradient>
+            <linearGradient id="groundG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1e5c1e"/>
+              <stop offset="100%" stop-color="#0d2e0d"/>
+            </linearGradient>
+            <linearGradient id="roadG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#c8a96a"/>
+              <stop offset="100%" stop-color="#a07840"/>
+            </linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="440" height="100" fill="url(#skyG)"/>
+          <rect y="100" width="440" height="110" fill="url(#groundG)"/>
+          <!-- Mountains -->
+          <polygon points="0,100 80,40 160,100" fill="#0d2a4a" opacity=".7"/>
+          <polygon points="80,100 180,30 280,100" fill="#0f3055" opacity=".8"/>
+          <polygon points="200,100 320,45 440,100" fill="#0d2a4a" opacity=".7"/>
+          <!-- Road main (perspective) -->
+          <polygon points="200,210 240,210 260,110 220,110" fill="#c8a96a"/>
+          <polygon points="201,210 239,210 259,111 221,111" fill="none" stroke="#a07840" stroke-width="1" opacity=".5"/>
+          <!-- Road dashes -->
+          <rect x="218" y="125" width="4" height="14" fill="#f0d8a0" opacity=".6" transform="skewX(-5)"/>
+          <rect x="218" y="148" width="4" height="14" fill="#f0d8a0" opacity=".6" transform="skewX(-5)"/>
+          <rect x="218" y="171" width="4" height="14" fill="#f0d8a0" opacity=".6" transform="skewX(-5)"/>
+          <!-- Left fork -->
+          <path d="M200,210 Q140,150 60,145" stroke="#c8a96a" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <path d="M200,210 Q140,150 60,145" stroke="#a07840" stroke-width="20" fill="none" stroke-linecap="round" opacity=".4"/>
+          <!-- Right fork -->
+          <path d="M240,210 Q310,155 390,148" stroke="#c8a96a" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <path d="M240,210 Q310,155 390,148" stroke="#a07840" stroke-width="20" fill="none" stroke-linecap="round" opacity=".4"/>
+          <!-- Trees left -->
+          <rect x="32" y="118" width="6" height="22" fill="#3a2010"/>
+          <ellipse cx="35" cy="112" rx="16" ry="20" fill="#1a5c1a"/>
+          <ellipse cx="35" cy="108" rx="10" ry="12" fill="#2a7a2a"/>
+          <!-- Trees right -->
+          <rect x="402" y="120" width="6" height="20" fill="#3a2010"/>
+          <ellipse cx="405" cy="114" rx="14" ry="18" fill="#1a5c1a"/>
+          <ellipse cx="405" cy="110" rx="9" ry="11" fill="#2a7a2a"/>
+          <!-- Moon -->
+          <circle cx="380" cy="25" r="16" fill="#ffe87a" filter="url(#glow)" opacity=".9"/>
+          <circle cx="388" cy="20" r="13" fill="#07111f"/>
+          <!-- Stars -->
+          <circle cx="50" cy="20" r="1.5" fill="#fff" opacity=".8"/>
+          <circle cx="120" cy="12" r="1" fill="#fff" opacity=".6"/>
+          <circle cx="180" cy="28" r="1.5" fill="#fff" opacity=".9"/>
+          <circle cx="280" cy="15" r="1" fill="#fff" opacity=".7"/>
+          <circle cx="330" cy="32" r="1.5" fill="#fff" opacity=".5"/>
+          <!-- Person at fork (SVG character) -->
+          <g transform="translate(206,115)" filter="url(#glow)">
+            <!-- Body -->
+            <ellipse cx="10" cy="7" rx="7" ry="9" fill="#e8c090"/><!-- head -->
+            <circle cx="10" cy="6" r="6.5" fill="#f5d5a0"/>
+            <!-- hat -->
+            <rect x="4" y="-1" width="12" height="3" rx="1.5" fill="#1a3a8a"/>
+            <rect x="6" y="-5" width="8" height="5" rx="1" fill="#1a3a8a"/>
+            <circle cx="10" cy="-4" r="1.5" fill="#e8b84b"/>
+            <!-- face -->
+            <circle cx="7.5" cy="6" r="1" fill="#5a3010"/>
+            <circle cx="12.5" cy="6" r="1" fill="#5a3010"/>
+            <path d="M7.5 9 Q10 11 12.5 9" stroke="#5a3010" stroke-width=".8" fill="none"/>
+            <!-- torso -->
+            <rect x="5" y="14" width="10" height="14" rx="2" fill="#1a3a8a"/>
+            <!-- belt -->
+            <rect x="5" y="26" width="10" height="3" fill="#c8a030"/>
+            <!-- arms -->
+            <rect x="0" y="15" width="5" height="10" rx="2" fill="#1a3a8a"/>
+            <rect x="15" y="15" width="5" height="10" rx="2" fill="#1a3a8a"/>
+            <!-- hands -->
+            <circle cx="2.5" cy="25" r="2.5" fill="#f5d5a0"/>
+            <circle cx="17.5" cy="25" r="2.5" fill="#f5d5a0"/>
+            <!-- legs -->
+            <rect x="5" y="28" width="5" height="12" rx="2" fill="#1a1a4a"/>
+            <rect x="10" y="28" width="5" height="12" rx="2" fill="#1a1a4a"/>
+            <!-- shoes -->
+            <ellipse cx="7.5" cy="40" rx="5" ry="2.5" fill="#1a0a00"/>
+            <ellipse cx="12.5" cy="40" rx="5" ry="2.5" fill="#1a0a00"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="entry-overlay">
+      <div class="entry-label">🛡️ 国家安全知识闯关</div>
+      <div class="entry-sub">走出正确的道路，成为守法公民</div>
+      <button class="btn-start" onclick="openGame()">立即探索</button>
+    </div>
+  </div>
 
-    <p style="text-align:center;margin-top:20px;color:#666">某地方人民检察院 宣</p>
-
+  <!-- Footer -->
+  <div class="footer-body">
+    <p>维护国家安全，我们每个人都是参与者、守护者。让我们从了解开始，从身边做起，共同筑牢国家安全的铜墙铁壁。</p>
+    <div class="law-card">
+      <h4>📖 《中华人民共和国国家安全法》第七十七条</h4>
+      <p>公民和组织应当履行下列维护国家安全的义务：遵守宪法、法律法规关于国家安全的有关规定；及时报告危害国家安全活动的线索；如实提供所知悉的涉及危害国家安全活动的证据。</p>
+    </div>
+    <div class="org">
+      <p>📌 某地方检察院出品</p>
+      <p>4·15全民国家安全教育日</p>
+    </div>
+  </div>
 </div>
 
+<!-- ══════════ GAME MODAL ══════════ -->
+<div class="gmodal" id="gmodal">
+<div class="gbox" id="gbox">
 
+  <!-- HUD -->
+  <button class="hud-btn spin" id="btnMusic" onclick="toggleMusic()">🎵</button>
+  <button class="hud-btn" id="btnClose" onclick="closeGame()">✕</button>
 
-<!-- 游戏弹窗 -->
-
-<div class="game-modal" id="gameModal">
-
-    <div class="game-box">
-
-        <button class="close-btn" onclick="closeGame()">×</button>
-
-        <button class="audio-control" onclick="toggleAudio()" id="audioBtn">关闭音乐</button>
-
-
-
-        <div class="scene">
-
-            <div class="police-box" id="policeBox">
-
-                <h3>警察叔叔：</h3>
-
-                <p id="questionText">正在加载问题...</p>
-
-            </div>
-
-
-
-            <div class="road-box">
-
-                <div class="road" id="road"></div>
-
-                <div class="people" id="people"></div>
-
-            </div>
-
-
-
-            <button class="back-btn" id="backBtn" onclick="goBack()">返回上一步</button>
-
-        </div>
-
-
-
-        <div class="result-box" id="resultBox">
-
-            <h2 id="resultTitle"></h2>
-
-            <p id="resultContent"></p>
-
-            <button class="restart-btn" onclick="restartGame()">重新开始</button>
-
-        </div>
-
+  <!-- Police bar -->
+  <div class="police-bar" id="policeBar">
+    <div class="police-char">
+      <div class="police-svg-wrap">
+        <svg viewBox="0 0 56 72" xmlns="http://www.w3.org/2000/svg">
+          <!-- Police officer SVG -->
+          <circle cx="28" cy="18" r="14" fill="#f5d5a0"/>
+          <rect x="16" y="8" width="24" height="6" rx="3" fill="#1a3a8a"/>
+          <rect x="18" y="3" width="20" height="7" rx="2" fill="#1a3a8a"/>
+          <circle cx="28" cy="4" r="3" fill="#e8b84b"/>
+          <circle cx="22" cy="17" r="2" fill="#5a3010"/>
+          <circle cx="34" cy="17" r="2" fill="#5a3010"/>
+          <path d="M23 23 Q28 27 33 23" stroke="#5a3010" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <rect x="16" y="32" width="24" height="28" rx="4" fill="#1a3a8a"/>
+          <rect x="16" y="57" width="10" height="3" fill="#c8a030"/>
+          <rect x="16" y="58" width="24" height="4" fill="#c8a030" rx="1"/>
+          <rect x="4" y="33" width="12" height="22" rx="4" fill="#1a3a8a"/>
+          <rect x="40" y="33" width="12" height="22" rx="4" fill="#1a3a8a"/>
+          <circle cx="10" cy="55" r="5" fill="#f5d5a0"/>
+          <circle cx="46" cy="55" r="5" fill="#f5d5a0"/>
+          <rect x="17" y="60" width="10" height="22" rx="4" fill="#1a1a4a"/>
+          <rect x="29" y="60" width="10" height="22" rx="4" fill="#1a1a4a"/>
+          <ellipse cx="22" cy="82" rx="9" ry="4" fill="#0a0a1a"/>
+          <ellipse cx="34" cy="82" rx="9" ry="4" fill="#0a0a1a"/>
+          <rect x="20" y="42" width="16" height="12" rx="3" fill="#d4a030" opacity=".7"/>
+          <circle cx="28" cy="48" r="3" fill="#e8b84b"/>
+        </svg>
+      </div>
+      <div class="police-tag">警察叔叔</div>
     </div>
+    <div class="bubble" id="bubble">
+      <div class="bubble-round" id="bRound">第1关</div>
+      <div class="bubble-q" id="bQ">正在加载...</div>
+      <div class="bubble-hint" id="bHint">👇 请走向你认为正确的道路</div>
+    </div>
+  </div>
+
+  <!-- Map viewport (draggable) -->
+  <div class="map-viewport" id="mapVP">
+    <canvas id="mapCanvas"></canvas>
+    <!-- Character overlay -->
+    <div id="charWrap" style="position:absolute;pointer-events:none;z-index:20;
+      transition:none;transform-origin:bottom center;">
+      <svg id="charSVG" width="40" height="64" viewBox="0 0 40 64"></svg>
+    </div>
+    <!-- Answer options overlay -->
+    <div id="optWrap" style="position:absolute;inset:0;z-index:25;"></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog-hud" id="progHud"></div>
+
+  <!-- Back -->
+  <button class="back-hud" id="backBtn" onclick="goBack()">← 返回上一步</button>
+
+  <!-- Transition -->
+  <div class="trans" id="trans"></div>
+
+  <!-- Result -->
+  <div class="result" id="resultScreen">
+    <div class="r-confetti" id="rConfetti"></div>
+    <div class="r-content">
+      <svg class="r-police" id="rPolice" viewBox="0 0 56 84" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="28" cy="18" r="14" fill="#f5d5a0"/>
+        <rect x="16" y="8" width="24" height="6" rx="3" fill="#1a3a8a"/>
+        <rect x="18" y="3" width="20" height="7" rx="2" fill="#1a3a8a"/>
+        <circle cx="28" cy="4" r="3" fill="#e8b84b"/>
+        <circle cx="22" cy="17" r="2" fill="#5a3010"/>
+        <circle cx="34" cy="17" r="2" fill="#5a3010"/>
+        <path d="M23 23 Q28 27 33 23" stroke="#5a3010" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <rect x="16" y="32" width="24" height="28" rx="4" fill="#1a3a8a"/>
+        <rect x="16" y="58" width="24" height="4" fill="#c8a030" rx="1"/>
+        <rect x="4" y="33" width="12" height="22" rx="4" fill="#1a3a8a"/>
+        <rect x="40" y="33" width="12" height="22" rx="4" fill="#1a3a8a"/>
+        <circle cx="10" cy="55" r="5" fill="#f5d5a0"/>
+        <circle cx="46" cy="55" r="5" fill="#f5d5a0"/>
+        <rect x="17" y="60" width="10" height="22" rx="4" fill="#1a1a4a"/>
+        <rect x="29" y="60" width="10" height="22" rx="4" fill="#1a1a4a"/>
+        <ellipse cx="22" cy="82" rx="9" ry="4" fill="#0a0a1a"/>
+        <ellipse cx="34" cy="82" rx="9" ry="4" fill="#0a0a1a"/>
+      </svg>
+      <div class="r-icon" id="rIcon">🏆</div>
+      <div class="r-title" id="rTitle">恭喜通关！</div>
+      <div class="r-desc" id="rDesc"></div>
+      <div class="r-law" id="rLaw"></div>
+      <div class="r-btns">
+        <button class="btn-retry" onclick="restartGame()">再玩一次</button>
+        <button class="btn-qclose" onclick="closeGame()">关闭游戏</button>
+      </div>
+    </div>
+  </div>
 
 </div>
-
-
-
-<audio id="bgm" loop>
-
-    <source src="https://www.fesliyanstudios.com/musicfiles/426.mp3" type="audio/mpeg">
-
-
-
-
+</div>
 
 <script>
+/* ═══════════════════════════════════════════════
+   HERO CANVAS — Starfield + particle
+═══════════════════════════════════════════════ */
+(function(){
+  const c=document.getElementById('heroCanvas');
+  const ctx=c.getContext('2d');
+  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
+  resize();window.addEventListener('resize',resize);
+  const stars=Array.from({length:120},()=>({
+    x:Math.random()*c.width,y:Math.random()*c.height,
+    r:Math.random()*1.5+.3,s:Math.random()*.8+.4,
+    t:Math.random()*Math.PI*2
+  }));
+  function draw(ts){
+    ctx.clearRect(0,0,c.width,c.height);
+    stars.forEach(s=>{
+      s.t+=.012*s.s;
+      const a=.4+.5*Math.sin(s.t);
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,240,180,${a})`;ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw(0);
+})();
 
-    // 题目路线数据
+/* ═══════════════════════════════════════════════
+   GAME DATA TREE
+═══════════════════════════════════════════════ */
+const TREE={
+  id:'r',round:1,
+  question:'小李发现邻居深夜接待陌生人，并拍摄附近重要设施照片，他应该怎么做？',
+  options:[
+    {text:'拨打12339向国家安全机关举报',correct:true,
+     child:{id:'A',round:2,
+       question:'举报后，国家安全机关请小李"保密配合"调查。他应如何处理这一信息？',
+       options:[
+         {text:'严格保守秘密，绝不对外透露',correct:true,
+          child:{id:'AA',round:3,
+            question:'有人冒充安全人员要求小李提供个人信息"协助调查"，他应怎么做？',
+            options:[
+              {text:'要求对方出示证件，并主动联系官方核实',correct:true,
+               child:{id:'AAA',round:4,
+                 question:'案件告破后，媒体采访小李想了解案情细节，他应该怎么说？',
+                 options:[
+                   {text:'如实向媒体讲述所有案情经过',correct:false,endpoint:true,endType:'lose',
+                    reason:'向媒体透露案情细节，可能构成泄露国家秘密，须承担相应法律责任。'},
+                   {text:'以"不方便透露"婉拒采访',correct:true,endpoint:true,endType:'win'},
+                   {text:'在社交平台发帖讲述全程',correct:false,endpoint:true,endType:'lose',
+                    reason:'网络发布涉密信息，可能构成泄露国家秘密罪，将面临刑事追究。'}
+                 ]
+               }
+              },
+              {text:'觉得是官方，直接提供了所有信息',correct:false,endpoint:true,endType:'lose',
+               reason:'未核实身份便提供个人信息，可能将关键情报泄露给不法分子，对侦查工作造成严重影响。'}
+            ]
+          }
+         },
+         {text:'把举报经历告诉了朋友分享',correct:false,endpoint:true,endType:'lose',
+          reason:'泄露举报行动可能打草惊蛇，致使嫌疑人逃脱，妨碍国家安全机关侦查，情节严重涉嫌违法。'},
+         {text:'在社交媒体公开发帖引关注',correct:false,endpoint:true,endType:'lose',
+          reason:'公开涉及国家安全的敏感信息，影响侦查行动，可能构成泄露国家秘密，依法须追责。'}
+       ]
+     }
+    },
+    {text:'觉得多一事不如少一事，不管',correct:false,endpoint:true,endType:'lose',
+     reason:'公民有法定义务举报危害国家安全的行为，知情不报情节严重可被追究相应法律责任。'},
+    {text:'自己上前质问陌生人',correct:false,endpoint:true,endType:'lose',
+     reason:'擅自行动可能打草惊蛇干扰专业侦查，并给自身带来人身安全威胁，应交由专业部门处置。'}
+  ]
+};
 
-    const data = [
+/* ═══════════════════════════════════════════════
+   MAP LAYOUT — node positions on world canvas
+═══════════════════════════════════════════════ */
+// World is 1200×700 canvas. Nodes placed at specific coords.
+const W=1200,H=700;
+// Node coordinate map: id -> {x,y}
+const NODE_POS={
+  r:{x:100,y:350},
+  A:{x:350,y:350},
+  AA:{x:600,y:350},
+  AAA:{x:850,y:350},
+  // End nodes
+  'r-1':{x:350,y:180},  // r option 1 (correct) = A
+  'r-2':{x:350,y:490},  // r option 2 (fail)
+  'r-3':{x:350,y:580},  // r option 3 (fail)
+  'A-0':{x:600,y:200},  // A option 0 (correct) = AA
+  'A-1':{x:600,y:460},
+  'A-2':{x:600,y:560},
+  'AA-0':{x:850,y:240}, // AA option 0 (correct) = AAA
+  'AA-1':{x:850,y:500},
+  'AAA-0':{x:1080,y:490},
+  'AAA-1':{x:1080,y:330},
+  'AAA-2':{x:1080,y:180},
+};
+// Build flat option-end positions
+// We'll derive paths dynamically during rendering
 
-        {
+/* ═══════════════════════════════════════════════
+   WORLD CANVAS RENDERER
+═══════════════════════════════════════════════ */
+let mapCtx,mapW,mapH;
+function initMapCanvas(){
+  const vp=document.getElementById('mapVP');
+  const cv=document.getElementById('mapCanvas');
+  mapW=vp.offsetWidth||360;mapH=vp.offsetHeight||600;
+  cv.width=W;cv.height=H;
+  cv.style.width=W+'px';cv.style.height=H+'px';
+  mapCtx=cv.getContext('2d');
+  drawWorld();
+}
 
-            q:"下列不属于国家安全范畴的是？",
+function drawWorld(){
+  const ctx=mapCtx;
+  ctx.clearRect(0,0,W,H);
 
-            opts:["网络安全","家庭聚餐安全","生态安全"],
+  // ── Sky (3D perspective gradient) ──
+  const skyG=ctx.createLinearGradient(0,0,0,H*0.45);
+  skyG.addColorStop(0,'#030c1f');
+  skyG.addColorStop(.5,'#0a2050');
+  skyG.addColorStop(1,'#1a4a8a');
+  ctx.fillStyle=skyG;ctx.fillRect(0,0,W,H*0.45);
 
-            correct:1
+  // Stars in sky
+  const starSeeds=[[80,40],[200,25],[350,55],[520,18],[680,45],[820,30],[1000,60],[1150,22],[440,15],[150,70]];
+  starSeeds.forEach(([sx,sy])=>{
+    ctx.beginPath();ctx.arc(sx,sy,2,0,Math.PI*2);
+    ctx.fillStyle='rgba(255,240,200,0.85)';ctx.fill();
+  });
 
-        },
+  // Moon
+  ctx.beginPath();ctx.arc(1050,45,28,0,Math.PI*2);
+  ctx.fillStyle='#ffe870';ctx.fill();
+  ctx.beginPath();ctx.arc(1065,38,23,0,Math.PI*2);
+  ctx.fillStyle='#030c1f';ctx.fill();
 
-        {
+  // Mountains — multiple layers for depth
+  drawMountains(ctx);
 
-            q:"发现有人偷拍军事禁区，你应该？",
+  // ── Ground ──
+  const groundG=ctx.createLinearGradient(0,H*0.42,0,H);
+  groundG.addColorStop(0,'#1e6622');
+  groundG.addColorStop(.4,'#155c1a');
+  groundG.addColorStop(1,'#0a300d');
+  ctx.fillStyle=groundG;ctx.fillRect(0,H*0.42,W,H*0.58);
 
-            opts:["假装没看见","立即报警","拍照转发朋友圈"],
+  // Ground texture lines (perspective)
+  ctx.save();
+  for(let y=H*0.45;y<H;y+=28){
+    const alpha=0.06+0.06*(y-H*0.45)/(H*0.55);
+    ctx.strokeStyle=`rgba(0,80,0,${alpha})`;
+    ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();
+  }
+  ctx.restore();
 
-            correct:1
+  // ── Draw ALL roads ──
+  drawAllRoads(ctx);
 
-        },
+  // ── Trees ──
+  drawTrees(ctx);
 
-        {
+  // ── Bushes ──
+  drawBushes(ctx);
 
-            q:"向境外提供国家秘密会构成？",
+  // ── Node markers ──
+  drawNodeMarkers(ctx);
+}
 
-            opts:["合法交流","危害国家安全罪","正常学术往来"],
+function drawMountains(ctx){
+  // Back mountains (dark)
+  [[0,200,250,60],[150,190,180,50],[300,195,220,55],[500,185,260,60],[700,192,200,55],[900,188,240,60],[1100,195,180,50]].forEach(([x,y,w,h])=>{
+    ctx.beginPath();
+    ctx.moveTo(x,H*0.45);ctx.lineTo(x+w/2,y);ctx.lineTo(x+w,H*0.45);
+    ctx.fillStyle='#0a1e38';ctx.fill();
+  });
+  // Mid mountains
+  [[50,215,200,55],[250,210,160,50],[420,205,220,55],[620,212,180,50],[800,208,200,55],[1000,215,160,50]].forEach(([x,y,w,h])=>{
+    ctx.beginPath();
+    ctx.moveTo(x,H*0.45);ctx.lineTo(x+w/2,y);ctx.lineTo(x+w,H*0.45);
+    ctx.fillStyle='#0d2540';ctx.fill();
+    // Snow caps
+    ctx.beginPath();
+    ctx.moveTo(x+w/2-12,y+18);ctx.lineTo(x+w/2,y);ctx.lineTo(x+w/2+12,y+18);
+    ctx.fillStyle='rgba(200,220,255,0.4)';ctx.fill();
+  });
+}
 
-            correct:1
+function drawAllRoads(ctx){
+  // Main horizontal road (player's path through the correct chain)
+  // r -> A -> AA -> AAA
+  const mainNodes=[NODE_POS.r,NODE_POS.A,NODE_POS.AA,NODE_POS.AAA];
+  // Draw wide road sections
+  for(let i=0;i<mainNodes.length-1;i++){
+    drawRoadSegment(ctx,mainNodes[i].x,mainNodes[i].y,mainNodes[i+1].x,mainNodes[i+1].y,28,'#c8a96a','#a07840',true);
+  }
+  // Branch roads from r
+  [NODE_POS['r-2'],NODE_POS['r-3']].forEach(p=>{
+    drawRoadSegment(ctx,NODE_POS.r.x,NODE_POS.r.y,p.x,p.y,20,'#b09060','#907040',false);
+  });
+  // Branch roads from A
+  [NODE_POS['A-1'],NODE_POS['A-2']].forEach(p=>{
+    drawRoadSegment(ctx,NODE_POS.A.x,NODE_POS.A.y,p.x,p.y,20,'#b09060','#907040',false);
+  });
+  // Branch from AA
+  drawRoadSegment(ctx,NODE_POS.AA.x,NODE_POS.AA.y,NODE_POS['AA-1'].x,NODE_POS['AA-1'].y,20,'#b09060','#907040',false);
+  // Branches from AAA
+  [NODE_POS['AAA-0'],NODE_POS['AAA-1'],NODE_POS['AAA-2']].forEach(p=>{
+    drawRoadSegment(ctx,NODE_POS.AAA.x,NODE_POS.AAA.y,p.x,p.y,20,'#b09060','#907040',false);
+  });
+}
 
-        },
+function drawRoadSegment(ctx,x1,y1,x2,y2,width,col,edge,dashes){
+  const dx=x2-x1,dy=y2-y1,len=Math.sqrt(dx*dx+dy*dy);
+  const nx=-dy/len*width/2,ny=dx/len*width/2;
+  // Shadow
+  ctx.beginPath();
+  ctx.moveTo(x1+nx+2,y1+ny+3);ctx.lineTo(x2+nx+2,y2+ny+3);
+  ctx.lineTo(x2-nx+2,y2-ny+3);ctx.lineTo(x1-nx+2,y1-ny+3);
+  ctx.fillStyle='rgba(0,0,0,0.25)';ctx.fill();
+  // Road fill
+  ctx.beginPath();
+  ctx.moveTo(x1+nx,y1+ny);ctx.lineTo(x2+nx,y2+ny);
+  ctx.lineTo(x2-nx,y2-ny);ctx.lineTo(x1-nx,y1-ny);
+  ctx.fillStyle=col;ctx.fill();
+  // Edge lines
+  ctx.strokeStyle=edge;ctx.lineWidth=2;ctx.setLineDash([]);
+  ctx.beginPath();ctx.moveTo(x1+nx,y1+ny);ctx.lineTo(x2+nx,y2+ny);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x1-nx,y1-ny);ctx.lineTo(x2-nx,y2-ny);ctx.stroke();
+  // Center dashes
+  if(dashes){
+    ctx.strokeStyle='rgba(255,248,200,0.7)';ctx.lineWidth=2;ctx.setLineDash([16,14]);
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    ctx.setLineDash([]);
+  }
+}
 
-        {
+function drawTrees(ctx){
+  const positions=[
+    [60,330],[60,370],[130,300],[130,400],[260,290],[260,420],[400,280],[400,430],
+    [520,285],[520,425],[720,280],[720,430],[900,280],[900,430],[1050,295],[1050,415],[1160,310],[1160,395]
+  ];
+  positions.forEach(([tx,ty])=>{
+    // trunk
+    ctx.fillStyle='#5a3010';
+    ctx.fillRect(tx-4,ty,8,24);
+    // canopy layers
+    const g=ctx.createRadialGradient(tx,ty-10,2,tx,ty-10,28);
+    g.addColorStop(0,'#2a9a2a');g.addColorStop(.6,'#1a7a1a');g.addColorStop(1,'rgba(10,60,10,0)');
+    ctx.beginPath();ctx.arc(tx,ty-10,26,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    ctx.beginPath();ctx.arc(tx,ty-22,18,0,Math.PI*2);
+    ctx.fillStyle='#38b838';ctx.fill();
+    ctx.beginPath();ctx.arc(tx,ty-33,11,0,Math.PI*2);
+    ctx.fillStyle='#4fd44f';ctx.fill();
+  });
+}
 
-            q:"维护国家安全，公民应当？",
+function drawBushes(ctx){
+  [[180,370],[310,360],[450,365],[570,370],[680,360],[780,365],[960,360],[1100,370]].forEach(([bx,by])=>{
+    ctx.beginPath();ctx.arc(bx,by,12,0,Math.PI*2);ctx.fillStyle='#1a6e1a';ctx.fill();
+    ctx.beginPath();ctx.arc(bx+10,by+4,10,0,Math.PI*2);ctx.fillStyle='#22882a';ctx.fill();
+    ctx.beginPath();ctx.arc(bx-10,by+4,10,0,Math.PI*2);ctx.fillStyle='#1e7a22';ctx.fill();
+  });
+}
 
-            opts:["遵守宪法法律","随意泄露信息","拒绝配合调查"],
+function drawNodeMarkers(ctx){
+  // Draw fork icons at non-endpoint nodes
+  [NODE_POS.r,NODE_POS.A,NODE_POS.AA,NODE_POS.AAA].forEach((p,i)=>{
+    // Glowing circle
+    const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,22);
+    g.addColorStop(0,'rgba(232,184,75,0.5)');g.addColorStop(1,'rgba(232,184,75,0)');
+    ctx.beginPath();ctx.arc(p.x,p.y,22,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+  });
+}
 
-            correct:0
+/* ═══════════════════════════════════════════════
+   DRAGGABLE MAP
+═══════════════════════════════════════════════ */
+let worldX=0,worldY=0;
+let dragStart=null,dragLast=null,velocity={x:0,y:0};
+let animFrame=null;
 
-        }
+function setWorldPos(x,y,animated){
+  // Clamp
+  const maxX=0,minX=mapW-W;
+  const maxY=0,minY=mapH-H;
+  worldX=Math.max(minX,Math.min(maxX,x));
+  worldY=Math.max(minY,Math.min(maxY,y));
+  const mw=document.getElementById('mapVP').querySelector('canvas');
+  mw.style.transform=`translate(${worldX}px,${worldY}px)`;
+  document.getElementById('charWrap').style.left=(charWorldX+worldX-20)+'px';
+  document.getElementById('charWrap').style.top=(charWorldY+worldY-60)+'px';
+  // Update option positions
+  updateOptPositions();
+}
 
-    ];
-
-
-
-    let step = 0;
-
-    let pathPos = [0, -90, -180];
-
-    let history = [];
-
-    let audioOn = true;
-
-
-
-    // 游戏控制
-
-    function openGame(){
-
-        document.getElementById("gameModal").style.display="block";
-
-        playBgm();
-
-        render();
-
+function initDrag(){
+  const vp=document.getElementById('mapVP');
+  vp.addEventListener('pointerdown',e=>{
+    if(e.target.closest('.ans-sign'))return;
+    dragStart={x:e.clientX-worldX,y:e.clientY-worldY};
+    dragLast={x:e.clientX,y:e.clientY,t:Date.now()};
+    velocity={x:0,y:0};
+    if(animFrame){cancelAnimationFrame(animFrame);animFrame=null;}
+    vp.setPointerCapture(e.pointerId);
+  });
+  vp.addEventListener('pointermove',e=>{
+    if(!dragStart)return;
+    const now=Date.now(),dt=now-dragLast.t;
+    velocity={x:(e.clientX-dragLast.x)/(dt||16),y:(e.clientY-dragLast.y)/(dt||16)};
+    dragLast={x:e.clientX,y:e.clientY,t:now};
+    setWorldPos(e.clientX-dragStart.x,e.clientY-dragStart.y);
+  });
+  const endDrag=()=>{
+    if(!dragStart)return;
+    dragStart=null;
+    // Momentum scroll
+    function momentum(){
+      velocity.x*=0.92;velocity.y*=0.92;
+      if(Math.abs(velocity.x)<0.1&&Math.abs(velocity.y)<0.1)return;
+      setWorldPos(worldX+velocity.x*16,worldY+velocity.y*16);
+      animFrame=requestAnimationFrame(momentum);
     }
+    animFrame=requestAnimationFrame(momentum);
+  };
+  vp.addEventListener('pointerup',endDrag);
+  vp.addEventListener('pointercancel',endDrag);
+}
 
-    function closeGame(){
+/* ═══════════════════════════════════════════════
+   CHARACTER SVG (full body, animated)
+═══════════════════════════════════════════════ */
+function buildCharSVG(phase){// phase: 0=stand,1=walk1,2=walk2
+  const svg=document.getElementById('charSVG');
+  // Left leg angle and right leg angle
+  let la=0,ra=0,la2=0,ra2=0;
+  if(phase===1){la=-18;ra=18;}
+  if(phase===2){la=18;ra=-18;}
+  // Arm swing
+  let aa=-10,ab=10;
+  if(phase===1){aa=-25;ab=25;}
+  if(phase===2){aa=25;ab=-25;}
+  svg.innerHTML=`
+  <defs>
+    <filter id="cf"><feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.4)"/></filter>
+  </defs>
+  <g filter="url(#cf)">
+    <!-- Head -->
+    <circle cx="20" cy="11" r="10" fill="#f5d5a0"/>
+    <!-- Hair -->
+    <path d="M10 11 Q10 2 20 2 Q30 2 30 11 Q28 5 20 5 Q12 5 10 11Z" fill="#3a2010"/>
+    <!-- Face -->
+    <circle cx="16.5" cy="10" r="1.5" fill="#5a3010"/>
+    <circle cx="23.5" cy="10" r="1.5" fill="#5a3010"/>
+    <path d="M16 14 Q20 17 24 14" stroke="#c07040" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <!-- Ear -->
+    <ellipse cx="10" cy="11" rx="2" ry="3" fill="#ecc888"/>
+    <ellipse cx="30" cy="11" rx="2" ry="3" fill="#ecc888"/>
+    <!-- Body -->
+    <rect x="11" y="21" width="18" height="20" rx="4" fill="#2255cc"/>
+    <!-- Collar -->
+    <polygon points="17,21 20,26 23,21" fill="#fff" opacity=".8"/>
+    <!-- Belt -->
+    <rect x="11" y="38" width="18" height="4" rx="1" fill="#885500"/>
+    <rect x="17" y="37" width="6" height="6" rx="1" fill="#c8a030"/>
+    <!-- Left arm -->
+    <g transform="rotate(${aa},11,24)">
+      <rect x="5" y="21" width="6" height="16" rx="3" fill="#2255cc"/>
+      <circle cx="8" cy="37" r="4" fill="#f5d5a0"/>
+    </g>
+    <!-- Right arm -->
+    <g transform="rotate(${ab},29,24)">
+      <rect x="29" y="21" width="6" height="16" rx="3" fill="#2255cc"/>
+      <circle cx="32" cy="37" r="4" fill="#f5d5a0"/>
+    </g>
+    <!-- Left leg -->
+    <g transform="rotate(${la},16,42)">
+      <rect x="12" y="42" width="8" height="16" rx="3" fill="#1a1a50"/>
+      <ellipse cx="16" cy="58" rx="7" ry="4" fill="#1a0a00"/>
+    </g>
+    <!-- Right leg -->
+    <g transform="rotate(${ra},24,42)">
+      <rect x="20" y="42" width="8" height="16" rx="3" fill="#1a1a50"/>
+      <ellipse cx="24" cy="58" rx="7" ry="4" fill="#1a0a00"/>
+    </g>
+  </g>`;
+}
 
-        document.getElementById("gameModal").style.display="none";
+let charWorldX=100,charWorldY=350;
+let walkAnimId=null;
 
-        document.getElementById("bgm").pause();
+function placeChar(wx,wy,animate){
+  charWorldX=wx;charWorldY=wy;
+  const wrap=document.getElementById('charWrap');
+  wrap.style.left=(wx+worldX-20)+'px';
+  wrap.style.top=(wy+worldY-60)+'px';
+  if(!animate)buildCharSVG(0);
+}
 
+function walkCharTo(tx,ty,onDone,dir){
+  // dir: 1=right,-1=left
+  const svg=document.getElementById('charSVG');
+  svg.style.transform=dir<0?'scaleX(-1)':'scaleX(1)';
+  svg.style.transformOrigin='center bottom';
+  const steps=42,dur=900;
+  const sx=charWorldX,sy=charWorldY;
+  let step=0;
+  if(walkAnimId)cancelAnimationFrame(walkAnimId);
+  function tick(){
+    step++;
+    const t=step/steps;
+    const ease=t<.5?2*t*t:-1+(4-2*t)*t;
+    charWorldX=sx+(tx-sx)*ease;
+    charWorldY=sy+(ty-sy)*ease;
+    // Walk phase
+    const phase=(step%6<3)?1:2;
+    buildCharSVG(phase);
+    // Vertical bob
+    const bob=-Math.abs(Math.sin(step/steps*Math.PI*4))*4;
+    const wrap=document.getElementById('charWrap');
+    wrap.style.left=(charWorldX+worldX-20)+'px';
+    wrap.style.top=(charWorldY+worldY-60+bob)+'px';
+    if(step<steps){walkAnimId=requestAnimationFrame(tick);}
+    else{
+      buildCharSVG(0);
+      charWorldX=tx;charWorldY=ty;
+      wrap.style.left=(tx+worldX-20)+'px';
+      wrap.style.top=(ty+worldY-60)+'px';
+      svg.style.transform='scaleX(1)';
+      if(onDone)onDone();
     }
+  }
+  walkAnimId=requestAnimationFrame(tick);
+}
 
-    function playBgm(){
+/* ═══════════════════════════════════════════════
+   CAMERA / PAN TO CHARACTER
+═══════════════════════════════════════════════ */
+function panCameraTo(wx,wy,cb){
+  // Smoothly pan world so wx,wy is centered in viewport
+  const targetWorldX=mapW/2-wx;
+  const targetWorldY=mapH/2-wy;
+  const startX=worldX,startY=worldY;
+  const dur=600;let st=null;
+  function pan(ts){
+    if(!st)st=ts;
+    const t=Math.min((ts-st)/dur,1);
+    const e=1-Math.pow(1-t,3);
+    setWorldPos(startX+(targetWorldX-startX)*e,startY+(targetWorldY-startY)*e);
+    if(t<1)requestAnimationFrame(pan);
+    else{if(cb)cb();}
+  }
+  requestAnimationFrame(pan);
+}
 
-        document.getElementById("bgm").play().catch(e=>{});
+/* ═══════════════════════════════════════════════
+   OPTION SIGNS
+═══════════════════════════════════════════════ */
+let currentOptions=[];
 
-    }
+function renderOptions(node){
+  const wrap=document.getElementById('optWrap');
+  wrap.innerHTML='';
+  currentOptions=node.options||[];
+  currentOptions.forEach((opt,i)=>{
+    const targetKey=getEndKey(node.id,i,opt);
+    const tp=NODE_POS[targetKey]||endPos(node,i,currentOptions.length);
+    const div=document.createElement('div');
+    div.className='ans-sign';
+    div.dataset.idx=i;
+    div.style.cssText=`
+      position:absolute;
+      left:${tp.x+worldX-54}px;
+      top:${tp.y+worldY-50}px;
+      width:108px;cursor:pointer;
+      display:flex;flex-direction:column;align-items:center;gap:3px;
+      z-index:25;transition:transform .15s;`;
+    div.innerHTML=`
+      <div style="background:linear-gradient(135deg,#fffbe0,#ffe082);
+        border:2px solid #f9a825;border-radius:10px;
+        padding:7px 9px;font-size:11px;color:#333;font-weight:700;
+        text-align:center;line-height:1.5;
+        box-shadow:0 3px 12px rgba(0,0,0,0.25);
+        max-width:108px;">${opt.text}</div>
+      <div style="font-size:16px;">🚩</div>`;
+    div.addEventListener('click',()=>selectOpt(opt,i,tp));
+    div.addEventListener('pointerdown',e=>e.stopPropagation());
+    wrap.appendChild(div);
+  });
+}
 
-    function toggleAudio(){
+function getEndKey(nodeId,idx,opt){
+  if(opt.child)return opt.child.id;
+  return `${nodeId}-${idx}`;
+}
 
-        let a = document.getElementById("bgm");
+function endPos(node,i,total){
+  // Fallback computed positions
+  const base=NODE_POS[node.id];
+  const spread=120;
+  const offsets=total===2?[-1,1]:[-1,0,1];
+  return{x:base.x+200,y:base.y+offsets[i]*spread};
+}
 
-        let btn = document.getElementById("audioBtn");
+function updateOptPositions(){
+  const signs=document.querySelectorAll('.ans-sign');
+  signs.forEach(s=>{
+    const i=parseInt(s.dataset.idx);
+    if(!currentNode||!currentNode.options)return;
+    const opt=currentNode.options[i];
+    if(!opt)return;
+    const targetKey=getEndKey(currentNode.id,i,opt);
+    const tp=NODE_POS[targetKey]||endPos(currentNode,i,currentOptions.length);
+    s.style.left=(tp.x+worldX-54)+'px';
+    s.style.top=(tp.y+worldY-50)+'px';
+  });
+}
 
-        if(audioOn){
+/* ═══════════════════════════════════════════════
+   GAME STATE
+═══════════════════════════════════════════════ */
+let currentNode=null,history=[];
+let gameInited=false,musicOn=true;
+let audioCtx=null,musicTimer=null;
 
-            a.pause();
+function openGame(){
+  document.getElementById('gmodal').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(!gameInited){
+    gameInited=true;
+    setTimeout(()=>{
+      initMapCanvas();
+      initDrag();
+      const vp=document.getElementById('mapVP');
+      mapW=vp.offsetWidth;mapH=vp.offsetHeight;
+      startGame();
+    },80);
+  }
+  if(musicOn)startMusic();
+}
 
-            btn.textContent="开启音乐";
+function closeGame(){
+  document.getElementById('gmodal').classList.remove('open');
+  document.body.style.overflow='';
+  stopMusic();
+}
 
-        }else{
+function startGame(){
+  currentNode=TREE;history=[];
+  document.getElementById('resultScreen').classList.remove('show','win','lose');
+  document.getElementById('optWrap').style.pointerEvents='all';
+  charWorldX=NODE_POS.r.x;charWorldY=NODE_POS.r.y;
+  // Center view on start
+  worldX=mapW/2-NODE_POS.r.x;
+  worldY=mapH/2-NODE_POS.r.y;
+  setWorldPos(worldX,worldY);
+  placeChar(NODE_POS.r.x,NODE_POS.r.y,false);
+  renderNode(currentNode);
+}
 
-            a.play();
+function restartGame(){startGame();}
 
-            btn.textContent="关闭音乐";
+function renderNode(node){
+  document.getElementById('bRound').textContent=`第${node.round}关`;
+  document.getElementById('bQ').textContent=node.question;
+  document.getElementById('bubble').style.opacity='1';
+  document.getElementById('bubble').style.transition='opacity .35s';
+  renderProgress(node.round,4);
+  renderOptions(node);
+  document.getElementById('backBtn').style.display=history.length>0?'block':'none';
+}
 
-        }
+function renderProgress(cur,total){
+  const bar=document.getElementById('progHud');
+  bar.innerHTML='';
+  for(let i=1;i<=total;i++){
+    const d=document.createElement('div');
+    d.className='prog-dot'+(i<cur?' done':i===cur?' cur':'');
+    bar.appendChild(d);
+  }
+  const lbl=document.createElement('div');
+  lbl.className='prog-label';
+  lbl.textContent=`${cur}/${total}`;
+  bar.appendChild(lbl);
+}
 
-        audioOn=!audioOn;
-
-    }
-
-
-
-    // 渲染当前题目与道路
-
-    function render(){
-
-        let d = data[step];
-
-        document.getElementById("questionText").textContent = d.q;
-
-        let road = document.getElementById("road");
-
-        road.innerHTML = "";
-
-        d.opts.forEach((opt,i)=>{
-
-            let p = document.createElement("div");
-
-            p.className="path";
-
-            p.onclick=()=>choose(i);
-
-            road.appendChild(p);
-
+function selectOpt(opt,idx,targetPos){
+  document.getElementById('optWrap').style.pointerEvents='none';
+  // Fade bubble
+  document.getElementById('bubble').style.opacity='0';
+  // Walk to target position
+  const dir=targetPos.x>=charWorldX?1:-1;
+  walkCharTo(targetPos.x,targetPos.y,()=>{
+    if(opt.endpoint){
+      panCameraTo(targetPos.x,targetPos.y,()=>showResult(opt));
+    } else {
+      // Walk arrived, then pan & transition to next node
+      panCameraTo(NODE_POS[opt.child.id].x,NODE_POS[opt.child.id].y,()=>{
+        fadeTrans(()=>{
+          history.push(currentNode);
+          currentNode=opt.child;
+          // Walk char to new node position (it's the child start)
+          placeChar(NODE_POS[opt.child.id].x,NODE_POS[opt.child.id].y,false);
+          panCameraTo(NODE_POS[opt.child.id].x,NODE_POS[opt.child.id].y,null);
+          document.getElementById('optWrap').style.pointerEvents='all';
+          renderNode(currentNode);
         });
-
-        document.getElementById("people").style.left="calc(50% - 20px)";
-
-        document.getElementById("backBtn").style.display = step>0 ? "block" : "none";
-
+      });
     }
+  },dir);
+}
 
+function goBack(){
+  if(history.length===0)return;
+  document.getElementById('optWrap').style.pointerEvents='none';
+  document.getElementById('backBtn').style.display='none';
+  const prev=history.pop();
+  const prevPos=NODE_POS[prev.id];
+  walkCharTo(prevPos.x,prevPos.y,()=>{
+    fadeTrans(()=>{
+      currentNode=prev;
+      panCameraTo(prevPos.x,prevPos.y,null);
+      document.getElementById('optWrap').style.pointerEvents='all';
+      renderNode(currentNode);
+    });
+  },-1);
+}
 
+function fadeTrans(cb){
+  const t=document.getElementById('trans');
+  t.classList.add('dark');
+  setTimeout(()=>{t.classList.remove('dark');if(cb)cb();},480);
+}
 
-    // 选择答案
+/* ═══════════════════════════════════════════════
+   RESULT SCREEN
+═══════════════════════════════════════════════ */
+function showResult(opt){
+  const s=document.getElementById('resultScreen');
+  const win=opt.endType==='win';
+  s.classList.add('show',win?'win':'lose');
+  document.getElementById('rIcon').textContent=win?'🏆':'😟';
+  const t=document.getElementById('rTitle');
+  t.className='r-title '+(win?'win':'lose');
+  t.textContent=win?'恭喜通关！':'走错了！';
+  const desc=document.getElementById('rDesc');
+  if(win){
+    desc.innerHTML='🎉 您的每一步选择都正确无误！<br><br>您是一位懂法守法的好公民，在维护国家安全方面展示了优秀的素质！感谢您的守护！';
+  } else {
+    desc.innerHTML=`⚠️ 这条路走不通哦！<br><br><strong>后果提示：</strong>${opt.reason}`;
+  }
+  document.getElementById('rLaw').textContent='——《国家安全法》：公民应及时报告危害国家安全活动的线索，如实提供相关证据，保守国家秘密。';
+  if(win)launchConfetti();
+}
 
-    function choose(idx){
+function launchConfetti(){
+  const wrap=document.getElementById('rConfetti');
+  wrap.innerHTML='';
+  const colors=['#FFD700','#c0392b','#27ae60','#2980b9','#e74c3c','#f39c12','#9b59b6'];
+  for(let i=0;i<70;i++){
+    const p=document.createElement('div');
+    const sz=6+Math.random()*8;
+    Object.assign(p.style,{
+      position:'absolute',left:Math.random()*100+'%',top:'-12px',
+      width:sz+'px',height:sz+'px',
+      background:colors[i%colors.length],
+      borderRadius:Math.random()>.5?'50%':'2px',
+      animation:`confetti-fall ${2+Math.random()*2}s ease-in ${Math.random()*1.5}s forwards`,
+      transform:`rotate(${Math.random()*360}deg)`
+    });
+    wrap.appendChild(p);
+  }
+}
 
-        if(step>=data.length) return;
-
-        history.push(idx);
-
-        movePeople(idx);
-
-        setTimeout(()=>{
-
-            step++;
-
-            if(step>=data.length){
-
-                showResult();
-
-            }else{
-
-                render();
-
-            }
-
-        },900);
-
+/* ═══════════════════════════════════════════════
+   MUSIC
+═══════════════════════════════════════════════ */
+const MELODY=[523,659,784,880,784,659,523,440,494,523,587,659,587,523,494,440];
+let noteIdx=0;
+function startMusic(){
+  try{
+    audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();
+    function playNote(){
+      if(!musicOn)return;
+      const osc=audioCtx.createOscillator();
+      const gain=audioCtx.createGain();
+      osc.connect(gain);gain.connect(audioCtx.destination);
+      osc.type='triangle';
+      osc.frequency.value=MELODY[noteIdx%MELODY.length];
+      gain.gain.setValueAtTime(0.06,audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.55);
+      osc.start();osc.stop(audioCtx.currentTime+0.55);
+      noteIdx++;
     }
+    playNote();
+    musicTimer=setInterval(playNote,560);
+  }catch(e){}
+}
+function stopMusic(){clearInterval(musicTimer);musicTimer=null;}
+function toggleMusic(){
+  musicOn=!musicOn;
+  const btn=document.getElementById('btnMusic');
+  if(musicOn){btn.classList.add('spin');btn.textContent='🎵';startMusic();}
+  else{btn.classList.remove('spin');btn.textContent='🔇';stopMusic();}
+}
 
-
-
-    // 人物移动
-
-    function movePeople(idx){
-
-        let p = document.getElementById("people");
-
-        p.style.left = `calc(50% + ${pathPos[idx]}px)`;
-
-        document.getElementById("questionText").textContent="正在前行...";
-
-    }
-
-
-
-    // 返回上一步
-
-    function goBack(){
-
-        if(step<=0) return;
-
-        history.pop();
-
-        step--;
-
-        render();
-
-    }
-
-
-
-    // 结局判断
-
-    function showResult(){
-
-        document.querySelector(".road-box").style.display="none";
-
-        document.getElementById("backBtn").style.display="none";
-
-        let resBox = document.getElementById("resultBox");
-
-        let title = document.getElementById("resultTitle");
-
-        let content = document.getElementById("resultContent");
-
-        resBox.style.display="flex";
-
-
-
-        let ok = history.every((s,i)=>s===data[i].correct);
-
-        if(ok){
-
-            title.textContent="恭喜你！你是合格守法好公民！";
-
-            content.textContent="你的选择全部正确，国家安全知识掌握扎实，感谢你为维护国家安全贡献力量！";
-
-        }else{
-
-            title.textContent="选择有误，请注意法律风险";
-
-            content.textContent="部分选择不符合国家安全法律要求，错误行为可能危害国家安全，需承担法律责任，请认真学习相关法律知识。";
-
-        }
-
-    }
-
-
-
-    function restartGame(){
-
-        step=0;
-
-        history=[];
-
-        document.querySelector(".road-box").style.display="flex";
-
-        document.getElementById("resultBox").style.display="none";
-
-        render();
-
-    }
-
+/* Confetti keyframe */
+const style=document.createElement('style');
+style.textContent=`@keyframes confetti-fall{0%{transform:translateY(0) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}`;
+document.head.appendChild(style);
 </script>
-
 </body>
-
 </html>
